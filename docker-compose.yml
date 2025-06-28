@@ -1,21 +1,22 @@
-services:
-  wordpress:
-    image: wordpress:latest
+services:  # Define os serviços que compõem o ambiente (containers que serão criados)
+  wordpress:  # Primeiro serviço: o CMS WordPress
+    image: wordpress:latest  # Usa a imagem oficial mais recente do WordPress
     ports:
-      - "8080:80"
-    environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: wpuser
-      WORDPRESS_DB_PASSWORD: wppass
-      WORDPRESS_DB_NAME: wpdb
-    depends_on:
+      - "8080:80"  # Mapeia a porta 80 do container para a porta 8080 do host (acesso via http://localhost:8080)
+    environment:  # Variáveis de ambiente passadas para o container WordPress
+      WORDPRESS_DB_HOST: db  # Nome do serviço do banco de dados (host que o WordPress vai usar para se conectar ao MySQL)
+      WORDPRESS_DB_USER: wpuser  # Nome de usuário do banco de dados
+      WORDPRESS_DB_PASSWORD: wppass  # Senha do banco de dados
+      WORDPRESS_DB_NAME: wpdb  # Nome do banco de dados
+    depends_on:  # Garante que o container do banco de dados seja iniciado antes do WordPress
     - db
-  db:
-    image: mariadb:latest
-    environment:
-      MYSQL_DATABASE: wpdb
-      MYSQL_USER: wpuser
-      MYSQL_PASSWORD: wppass
-      MYSQL_ROOT_PASSWORD: rootpass
+
+  db:  # Segundo serviço: banco de dados MariaDB (uma versão compatível com MySQL)
+    image: mariadb:latest  # Usa a imagem oficial mais recente do MariaDB
+    environment:  # Variáveis de ambiente para configurar o banco
+      MYSQL_DATABASE: wpdb  # Cria automaticamente o banco de dados com esse nome
+      MYSQL_USER: wpuser  # Cria um usuário com esse nome
+      MYSQL_PASSWORD: wppass  # Define a senha do usuário acima
+      MYSQL_ROOT_PASSWORD: rootpass  # Senha do usuário root do MariaDB
     ports:
-      - "3306:3306"
+      - "3306:3306"  # Mapeia a porta padrão do MySQL para permitir acesso externo, se necessário
