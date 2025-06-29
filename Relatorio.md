@@ -249,7 +249,7 @@ Quando feito isso, entramos na tela para começar a configurar o site, a primeir
 2- Definido o idioma, a tela subsequente vem para configurações iniciais do site: 
 ![](Imagens/P2.jpg)
 
-Sendo bem sucedido ele retornara na tela que foi um um sucesso e um link direto para a acessar e fazer login. 
+Sendo bem sucedido ele retornara na tela que foi um sucesso e um link direto para acessar e fazer login. 
 
 3- Realizado o Login, entramos no painel principal do WordPress, onde podemos realizar toda a configuração e tematização do nosso site:
 ![](Imagens/P3.jpg)
