@@ -236,6 +236,182 @@ Em caso de sucesso, deve retornar uma mensagem como:
 /*!50503 SET NAMES utf8mb4 */;
 ```
 
+## Utilizando o WordPress
+
+1- Após subir os containers, é possível acessar o a url pela porta local:
+```
+-- http://localhost:(porta_utilizado_no_script - Ex: 8080)/wp-admin/install.php
+```
+
+Quando feito isso, entramos na tela para começar a configurar o site, a primeira tela é para definir o idioma padrão: 
+![](Imagens/P1.jpg)
+
+2- Definido o idioma, a tela subsequente vem para configurações iniciais do site: 
+![](Imagens/P2.jpg)
+
+Sendo bem sucedido ele retornara na tela que foi um um sucesso e um link direto para a acessar e fazer login. 
+
+3- Realizado o Login, entramos no painel principal do WordPress, onde podemos realizar toda a configuração e tematização do nosso site:
+![](Imagens/P3.jpg)
+
+## Menu lateral do WordPress
+
+### 1- Painel
+> Área inicial de administração do WordPress. Apresenta uma visão geral do site.
+>
+> - **Início**: resumo de atividades recentes, rascunhos, status do sistema.
+> - **Atualizações**: verifica e instala atualizações de:
+>   - Core do WordPress
+>   - Temas
+>   - Plugins
+>   - Traduções
+
+![](Imagens/P4.jpg)
+
+---
+
+### 2- Posts
+> Seção onde você gerencia os **posts do blog**.
+>
+> 1. **Todos os posts**  
+>    Lista todos os artigos publicados ou em rascunho.
+> 2. **Adicionar novo**  
+>    Abre o editor para criar um novo post.
+> 3. **Categorias**  
+>    Cria ou edita categorias para organizar seus posts.
+> 4. **Tags**  
+>    Define palavras-chave que descrevem seus posts.
+
+![](Imagens/P5.jpg)
+
+---
+
+### 3- Mídia
+> Biblioteca de **arquivos enviados**, como imagens, vídeos, PDFs.
+>
+> 1. **Biblioteca**  
+>    Mostra todos os arquivos enviados, com opções de edição.
+> 2. **Adicionar novo**  
+>    Permite enviar novos arquivos diretamente.
+
+![](Imagens/P6.jpg)
+
+---
+
+### 4- Páginas
+> Gerencia páginas estáticas do site (ex: Sobre, Contato).
+>
+> 1. **Todas as páginas**  
+>    Lista e permite editar/excluir páginas existentes.
+> 2. **Adicionar nova**  
+>    Cria uma nova página com o editor de blocos.
+
+![](Imagens/P7.jpg)
+
+---
+
+### 5- Comentários
+> Central de **moderação de comentários** feitos por visitantes.
+>
+> - Aprovar, rejeitar, marcar como spam ou responder.
+> - Útil para manter o conteúdo limpo e organizado.
+> - Os ícones coloridos ajudam a identificar o status dos comentários.
+
+![](Imagens/P8.jpg)
+
+---
+
+### 6- Aparência
+> Personalização visual do site, temas e estrutura.
+>
+> 1. **Temas**  
+>    Instala, ativa ou remove temas.
+> 2. **Personalizar**  
+>    Acessa o personalizador visual com pré-visualização.
+> 3. **Widgets**  
+>    Gerencia blocos reutilizáveis (como sidebar e rodapé).
+> 4. **Menus**  
+>    Cria e organiza menus de navegação.
+> 5. **Editor de arquivos**  
+>    (opcional) Edita diretamente os arquivos do tema. ⚠️ **Cuidado: pode quebrar o site.**
+
+![](Imagens/P9.jpg)
+
+---
+
+### 7- Plugins
+> Adiciona funcionalidades extras ao WordPress.
+>
+> 1. **Plugins instalados**  
+>    Lista e permite ativar/desativar plugins.
+> 2. **Adicionar novo**  
+>    Busca e instala plugins a partir do repositório oficial.
+> 3. **Editor de plugins**  
+>    ⚠️ Permite alterar o código dos plugins instalados.
+
+![](Imagens/P10.jpg)
+
+---
+
+### 8- Usuários
+> Gerencia quem pode acessar o painel e com que permissões.
+>
+> 1. **Todos os usuários**  
+>    Lista e edita usuários cadastrados.
+> 2. **Adicionar novo**  
+>    Cria um novo usuário com função específica (Administrador, Editor, etc).
+> 3. **Perfil**  
+>    Configurações e dados do seu próprio perfil (foto, senha, etc).
+
+![](Imagens/P11.jpg)
+
+---
+
+### 9- Ferramentas
+> Conjunto de recursos administrativos diversos.
+>
+> 1. **Ferramentas disponíveis**  
+>    Inclui funções como "Converter categorias em tags".
+> 2. **Importar/Exportar**  
+>    Migração de conteúdo entre sites.
+> 3. **Saúde do site**  
+>    Diagnóstico de performance e segurança.
+> 4. **Exportar dados pessoais / Apagar dados**  
+>    Ferramentas de conformidade com a LGPD/GDPR.
+
+![](Imagens/P12.jpg)
+
+---
+
+### 10- Configurações
+> Ajustes fundamentais do site.
+>
+> 1. **Geral**  
+>    Nome do site, URL, idioma, fuso horário.
+> 2. **Escrita**  
+>    Opções de publicação padrão.
+> 3. **Leitura**  
+>    Define qual página é a inicial e quantos posts por página.
+> 4. **Discussão**  
+>    Controle de comentários e moderação.
+> 5. **Mídia**  
+>    Tamanhos padrão para imagens.
+> 6. **Links permanentes**  
+>    Formato das URLs dos posts e páginas.
+> 7. **Privacidade**  
+>    Política de privacidade do site.
+
+![](Imagens/P13.jpg)
+
+## 11 - Visualização do site
+> Visualizar a página que está sendo feita
+> Obs: Normalmente depois de criado o site, a url quando digitada jogará direto nessa página:
+
+
+![](Imagens/P14.jpg)
+
+
+
 ## Referências
 https://hub.docker.com/_/wordpress
 
