@@ -143,9 +143,9 @@ services:                                                # Início da definiçã
 Serve para aumentar o tamanho dos arquivos que podem ser importados para o site, e para isso, é necessário a criação do arquivo `php.ini`, o script utilizado para ele foi:
 ```ini
 upload_max_filesize = 64M ; Define o tamanho máximo permitido para uploads de arquivos via PHP.
-post_max_size = 64M ; Define o tamanho máximo de dados permitidos para requisições POST. Isso inclui todos os campos do formulário e arquivos enviados.
-memory_limit = 128M ; Define o limite máximo de memória que um script PHP pode utilizar.
-max_execution_time = 300 ; Define o tempo máximo (em segundos) que um script PHP pode levar para ser executado.
+post_max_size = 64M       ; Define o tamanho máximo de dados permitidos para requisições POST. Isso inclui todos os campos do formulário e arquivos enviados.
+memory_limit = 128M       ; Define o limite máximo de memória que um script PHP pode utilizar.
+max_execution_time = 300  ; Define o tempo máximo (em segundos) que um script PHP pode levar para ser executado.
 ```
 
 3- Subir os containers:
