@@ -103,27 +103,32 @@ O arquivo default está neste repositório salvo como `docker-compose.yml`
 mkdir docker-compose.yml
 ```
 ```yml
-services:
-  wordpress:
-    image: wordpress:latest
+services:                                                # Início da definição dos serviços (containers que serão criados)
+
+  wordpress:                                             # Serviço principal: o site WordPress
+    image: wordpress:latest                              # Usando a imagem oficial mais recente do WordPress
     ports:
-      - "8080:80"
-    environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: wpuser
-      WORDPRESS_DB_PASSWORD: wppass
-      WORDPRESS_DB_NAME: wpdb
+      - "8080:80"                                        # Mapeia a porta 80 do container para a 8080 do host (acesso pelo navegador em http://localhost:8080)
+    environment:                                         # Variáveis de ambiente para configurar o WordPress
+      WORDPRESS_DB_HOST: db                              # Nome do serviço do banco de dados (deve bater com o nome do serviço abaixo)
+      WORDPRESS_DB_USER: wpuser                          # Usuário do banco que o WordPress irá usar
+      WORDPRESS_DB_PASSWORD: wppass                      # Senha do usuário do banco
+      WORDPRESS_DB_NAME: wpdb                            # Nome do banco de dados a ser usado
+    volumes:
+      - ./php.ini:/usr/local/etc/php/conf.d/uploads.ini  # Monta o arquivo php.ini local no container, para configurar limites do PHP (como upload_max_filesize)
     depends_on:
-      - db
-  db:
-    image: mariadb:latest
-    environment:
-      MYSQL_DATABASE: wpdb
-      MYSQL_USER: wpuser
-      MYSQL_PASSWORD: wppass
-      MYSQL_ROOT_PASSWORD: rootpass
+      - db                                               # Garante que o serviço "db" (banco de dados) será iniciado antes do WordPress
+
+  db:                                                    # Serviço do banco de dados (MariaDB)
+    image: mariadb:latest                                # Usando a imagem oficial mais recente do MariaDB
+    environment:                                         # Variáveis de ambiente para configurar o banco de dados
+      MYSQL_DATABASE: wpdb                               # Nome do banco que será criado ao iniciar o container
+      MYSQL_USER: wpuser                                 # Usuário do banco que será criado
+      MYSQL_PASSWORD: wppass                             # Senha do usuário
+      MYSQL_ROOT_PASSWORD: rootpass                      # Senha do usuário root do banco (acesso total)
     ports:
-      - "3306:3306"
+      - "3306:3306"                                      # Mapeia a porta padrão do MySQL do container para a mesma porta no host (opcional, útil para conectar ao banco via ferramentas externas)
+
 ```
 
 > ⚠️ **POSSÍVEIS PROBLEMAS**
@@ -186,18 +191,25 @@ mariadb -u root -p
     ```bash
     SHOW DATABASES
     ```
+    ![](Imagens/BD1.jpg)
+
   - 3.2 - Mostrar Tabelas:
     ```bash
     SHOW TABLES
     ```
+    ![](Imagens/BD2.jpg)
+
   - 3.3 - Seleciona um banco de dados para usar
     ```bash
     USE nome_do_banco
     ```
+    ![](Imagens/BD3.jpg)
+
   - 3.4 - Mostra a estrutura (colunas, tipos, chaves) de uma tabela
     ```bash
     DESCRIBE nome_da_tabela
     ```
+    ![](Imagens/BD4.jpg)
 
 4- Backup do banco de dados:
 ```bash
